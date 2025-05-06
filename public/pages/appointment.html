@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Appointment - Barangay Malabanban Norte</title>
+    <link rel="stylesheet" href="./../css/styles.css">
+    <link rel="stylesheet" href="./../css/appointment.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./../assets/logo/logo.jpg" alt="Barangay Logo" class="logo">
+            <h1>Barangay Malabanban Norte Candelaria Quezon</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="newsUpdate.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="complaint.html">Complaint</a></li>
+                <li><a href="appointment.html">Set Appointment</a></li>
+                <li><a href="requestdocuments.html">Request Documents</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="content">
+            <h2>Set an Appointment</h2>
+            <p>Use this form to schedule an appointment with barangay officials. Please provide the details below and we will confirm your appointment via email or phone.</p>
+            
+            <form id="appointment-form" onsubmit="return setAppointment()">
+                <div class="container">
+                    <h2>Book an Appointment</h2>
+                
+                    <label for="purpose">Purpose of Appointment:</label>
+                    <input type="text" id="fullname" placeholder="Enter your purpose">
+                
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" placeholder="Enter your full name">
+                
+                    <label for="address">Address / Zone / Purok:</label>
+                    <input type="text" id="address" placeholder="Enter your address">
+                
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" placeholder="Enter your contact number">
+                    
+                  <form action="/upload" method="POST" enctype="multipart/form-data">
+                  <label for="photo">Upload Photo or ID:</label>
+                  <input type="file" name="file" id="file" required />
+                </form>
+                
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" onchange="loadAvailableSlots()">
+                
+                    <label>Preferred Time Slot:</label>
+                    <div class="timeslots" id="slots"></div>
+                  
+                
+                    <button onclick="confirmAppointment()">Confirm Appointment</button>
+                  </div>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Barangay Malabanban Norte. All Rights Reserved.</p>
+    </footer>
+
+    <script src="./../js/appointment.js"></script>
+</body>
+</html>
